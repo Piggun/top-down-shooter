@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var anim = %AnimatedSprite2D
 
+signal health_depleted
+var health = 100.0
 const GUN = preload("res://gun.tscn")
 var weapon_spawned = false
 var new_gun = GUN.instantiate()
@@ -28,6 +30,15 @@ func _physics_process(delta):
 	else:
 		anim.play("idle")
 	move_and_slide()
+	
+	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
+	if overlapping_mobs.size() > 0:
+		%ProgressBar.value = health
+		health -= 5.0 * overlapping_mobs.size() * delta
+		print(health)
+		if health <= 0:
+			health_depleted.emit()
+			print("DEAD")
 
 #func spawn_weapon():
 	#new_gun = GUN.instantiate()
