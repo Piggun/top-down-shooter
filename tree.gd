@@ -5,5 +5,7 @@ extends StaticBody2D
 func hit():
 	anim.show()
 	anim.play("start")
-	await get_tree().create_timer(2).timeout
+
+
+func _on_leaves_animation_finished():
 	anim.hide()

@@ -92,3 +92,5 @@ sprite_frames = SubResource("SpriteFrames_maenj")
 animation = &"start"
 frame = 6
 frame_progress = 1.0
+
+[connection signal="animation_finished" from="Leaves" to="." method="_on_leaves_animation_finished"]
