@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://cg7h4xilee0ok"]
+
+[ext_resource type="Script" path="res://gun.gd" id="1_112je"]
+[ext_resource type="Texture2D" uid="uid://elbn27hfg2mk" path="res://PNG/Pistol .png" id="1_l78e5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_url86"]
+radius = 517.279
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f03mg"]
+atlas = ExtResource("1_l78e5")
+region = Rect2(660, 0, 660, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_himow"]
+atlas = ExtResource("1_l78e5")
+region = Rect2(0, 0, 660, 480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_olrd8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f03mg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_himow")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 15.0
+}]
+
+[node name="Gun" type="Area2D"]
+rotation = 0.0115384
+script = ExtResource("1_112je")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_url86")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+rotation = 0.137987
+
+[node name="Pistol" type="AnimatedSprite2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+position = Vector2(375.547, 5.2165)
+rotation = -0.148954
+scale = Vector2(0.32356, 0.32356)
+sprite_frames = SubResource("SpriteFrames_olrd8")
+animation = &"shoot"
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
+unique_name_in_owner = true
+position = Vector2(329.609, -190.663)
+scale = Vector2(5.45454, 5.45454)

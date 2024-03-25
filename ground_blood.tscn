@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://bpc171joll37p"]
+
+[ext_resource type="Texture2D" uid="uid://bvk11grjub0d" path="res://PNG/Ground-blood.png" id="1_wd7wu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhxqw"]
+atlas = ExtResource("1_wd7wu")
+region = Rect2(0, 0, 204, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytklf"]
+atlas = ExtResource("1_wd7wu")
+region = Rect2(204, 0, 204, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2svc"]
+atlas = ExtResource("1_wd7wu")
+region = Rect2(408, 0, 204, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8ac5"]
+atlas = ExtResource("1_wd7wu")
+region = Rect2(0, 72, 204, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o06nh"]
+atlas = ExtResource("1_wd7wu")
+region = Rect2(204, 72, 204, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac5i0"]
+atlas = ExtResource("1_wd7wu")
+region = Rect2(408, 72, 204, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2g8ss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhxqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytklf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2svc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8ac5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o06nh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac5i0")
+}],
+"loop": true,
+"name": &"spread",
+"speed": 2.0
+}]
+
+[node name="GroundBlood" type="AnimatedSprite2D"]
+position = Vector2(-31, 2)
+scale = Vector2(0.680556, 0.680556)
+sprite_frames = SubResource("SpriteFrames_2g8ss")
+animation = &"spread"
+frame_progress = 0.982518

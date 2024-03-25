@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://crkyo1gjc3pq3"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_kuta2"]
+[ext_resource type="PackedScene" uid="uid://bw55uu385suvu" path="res://animated_sprite_2d.tscn" id="2_84vew"]
+[ext_resource type="Texture2D" uid="uid://d13ykf3uelo33" path="res://PNG/Ground shadow.png" id="2_geouu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mf6s"]
+size = Vector2(173, 268.25)
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(576, 298)
+platform_floor_layers = 4294901760
+script = ExtResource("1_kuta2")
+
+[node name="GroundShadow" type="Sprite2D" parent="."]
+modulate = Color(0.262745, 0.356863, 0.184314, 1)
+position = Vector2(1, 17)
+scale = Vector2(0.287265, 0.297682)
+texture = ExtResource("2_geouu")
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("2_84vew")]
+unique_name_in_owner = true
+position = Vector2(2, -258)
+frame_progress = 0.400515
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -142.875)
+shape = SubResource("RectangleShape2D_5mf6s")
+
+[node name="WeaponPosition" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1, -143)

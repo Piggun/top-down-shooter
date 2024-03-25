@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://o4iwa6stjvew"]
+
+[ext_resource type="PackedScene" uid="uid://crkyo1gjc3pq3" path="res://player.tscn" id="1_ruscd"]
+[ext_resource type="PackedScene" uid="uid://dykcymon3yvde" path="res://tree.tscn" id="2_3va4m"]
+[ext_resource type="PackedScene" uid="uid://d04er5omgws4l" path="res://ninja.tscn" id="3_rew4p"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -19.0
+offset_top = -15.0
+offset_right = 2585.0
+offset_bottom = 1437.0
+scale = Vector2(1.00731, 1.03721)
+color = Color(0.67451, 0.839216, 0.439216, 0.901961)
+
+[node name="player" parent="." instance=ExtResource("1_ruscd")]
+position = Vector2(1250, 852)
+scale = Vector2(0.479998, 0.479998)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+
+[node name="Tree" parent="." instance=ExtResource("2_3va4m")]
+position = Vector2(311, 490)
+
+[node name="Tree2" parent="." instance=ExtResource("2_3va4m")]
+position = Vector2(1962, 988)
+
+[node name="Tree3" parent="." instance=ExtResource("2_3va4m")]
+position = Vector2(2271, 595)
+
+[node name="Tree4" parent="." instance=ExtResource("2_3va4m")]
+position = Vector2(209, 1165)
+
+[node name="Tree5" parent="." instance=ExtResource("2_3va4m")]
+position = Vector2(485, 1022)
+
+[node name="Tree6" parent="." instance=ExtResource("2_3va4m")]
+position = Vector2(388, 1382)
+
+[node name="Tree7" parent="." instance=ExtResource("2_3va4m")]
+position = Vector2(1077, 1841)
+
+[node name="Ninja" parent="." instance=ExtResource("3_rew4p")]
+position = Vector2(613, 341)
+
+[node name="Ninja2" parent="." instance=ExtResource("3_rew4p")]
+position = Vector2(708, 1334)
+
+[node name="Ninja3" parent="." instance=ExtResource("3_rew4p")]
+position = Vector2(2369, 280)
+
+[node name="Ninja4" parent="." instance=ExtResource("3_rew4p")]
+position = Vector2(1306, 294)
+
+[node name="Ninja5" parent="." instance=ExtResource("3_rew4p")]
+position = Vector2(1857, 1376)

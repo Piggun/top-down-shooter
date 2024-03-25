@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://d04er5omgws4l"]
+
+[ext_resource type="Texture2D" uid="uid://bg0tqh6g50j8" path="res://PNG/Ninja-walk.png" id="1_mn0hf"]
+[ext_resource type="Script" path="res://ninja.gd" id="1_vrnf2"]
+[ext_resource type="Texture2D" uid="uid://d13ykf3uelo33" path="res://PNG/Ground shadow.png" id="2_g3wip"]
+[ext_resource type="Texture2D" uid="uid://2f55lk2y3gsy" path="res://PNG/Ninja-hurt.png" id="3_khpww"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyyue"]
+atlas = ExtResource("3_khpww")
+region = Rect2(0, 0, 312, 516)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6cx6"]
+atlas = ExtResource("1_mn0hf")
+region = Rect2(0, 0, 312, 516)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc3n3"]
+atlas = ExtResource("1_mn0hf")
+region = Rect2(312, 0, 312, 516)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpw2x"]
+atlas = ExtResource("1_mn0hf")
+region = Rect2(0, 516, 312, 516)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uge18"]
+atlas = ExtResource("1_mn0hf")
+region = Rect2(312, 516, 312, 516)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqio7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyyue")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6cx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc3n3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpw2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uge18")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33mfh"]
+size = Vector2(79, 230)
+
+[node name="Mob" type="CharacterBody2D"]
+platform_floor_layers = 4294901760
+script = ExtResource("1_vrnf2")
+
+[node name="GroundShadow" type="Sprite2D" parent="."]
+modulate = Color(0.262745, 0.356863, 0.184314, 1)
+position = Vector2(0, 4)
+scale = Vector2(0.151894, 0.157402)
+texture = ExtResource("2_g3wip")
+
+[node name="Ninja" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -121.385)
+scale = Vector2(0.474359, 0.474359)
+sprite_frames = SubResource("SpriteFrames_hqio7")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -119)
+shape = SubResource("RectangleShape2D_33mfh")
