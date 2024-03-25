@@ -1,12 +1,72 @@
-[gd_scene load_steps=4 format=3 uid="uid://dykcymon3yvde"]
+[gd_scene load_steps=14 format=3 uid="uid://dykcymon3yvde"]
 
 [ext_resource type="Texture2D" uid="uid://c8a6dsohctav7" path="res://PNG/Tree.png" id="1_8lmm1"]
 [ext_resource type="Texture2D" uid="uid://d13ykf3uelo33" path="res://PNG/Ground shadow.png" id="1_b5tns"]
+[ext_resource type="Script" path="res://tree.gd" id="1_e0eeb"]
+[ext_resource type="Texture2D" uid="uid://boldaa2p3gfvl" path="res://PNG/Falling-leaves.png" id="4_dop2s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wy7kq"]
 radius = 44.911
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw1sw"]
+atlas = ExtResource("4_dop2s")
+region = Rect2(0, 0, 468, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qmro"]
+atlas = ExtResource("4_dop2s")
+region = Rect2(468, 0, 468, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m01r7"]
+atlas = ExtResource("4_dop2s")
+region = Rect2(936, 0, 468, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahio1"]
+atlas = ExtResource("4_dop2s")
+region = Rect2(0, 540, 468, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bjm2"]
+atlas = ExtResource("4_dop2s")
+region = Rect2(468, 540, 468, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmr0k"]
+atlas = ExtResource("4_dop2s")
+region = Rect2(936, 540, 468, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cai0m"]
+atlas = ExtResource("4_dop2s")
+region = Rect2(0, 1080, 468, 540)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_maenj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw1sw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qmro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m01r7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahio1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bjm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmr0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cai0m")
+}],
+"loop": false,
+"name": &"start",
+"speed": 5.0
+}]
+
 [node name="Tree" type="StaticBody2D"]
+script = ExtResource("1_e0eeb")
 
 [node name="GroundShadow" type="Sprite2D" parent="."]
 modulate = Color(0.262745, 0.356863, 0.184314, 1)
@@ -22,3 +82,13 @@ texture = ExtResource("1_8lmm1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -73)
 shape = SubResource("CircleShape2D_wy7kq")
+
+[node name="Leaves" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-2, -52)
+scale = Vector2(0.36218, 0.362179)
+sprite_frames = SubResource("SpriteFrames_maenj")
+animation = &"start"
+frame = 6
+frame_progress = 1.0
