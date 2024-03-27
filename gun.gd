@@ -36,7 +36,7 @@ func _physics_process(delta):
 		await get_tree().create_timer(fire_rate).timeout
 		can_fire = true
 	
-	# Controller aim	
+	 ##Controller aim	
 	#var look_vector = Vector2(0, 0)
 	#look_vector.x = Input.get_action_strength("aim_right") - Input.get_action_strength("aim_left")
 	#look_vector.y = Input.get_action_strength("aim_down") - Input.get_action_strength("aim_up")

@@ -91,6 +91,4 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_jjvcs")
-animation = &"walk"
-frame = 3
-frame_progress = 0.200457
+animation = &"sprint"

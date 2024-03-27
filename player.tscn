@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://crkyo1gjc3pq3"]
+[gd_scene load_steps=9 format=3 uid="uid://crkyo1gjc3pq3"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_kuta2"]
 [ext_resource type="PackedScene" uid="uid://bw55uu385suvu" path="res://animated_sprite_2d.tscn" id="2_84vew"]
@@ -25,6 +25,13 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oot1q"]
+bg_color = Color(1, 0.890196, 0.0941176, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="player" type="CharacterBody2D"]
 position = Vector2(576, 298)
 platform_floor_layers = 4294901760
@@ -39,7 +46,6 @@ texture = ExtResource("2_geouu")
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("2_84vew")]
 unique_name_in_owner = true
 position = Vector2(2, -258)
-frame_progress = 0.400515
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -142.875)
@@ -59,7 +65,7 @@ position = Vector2(2, -148)
 shape = SubResource("CircleShape2D_tcvtw")
 debug_color = Color(0.807843, 0.372549, 0.470588, 0.419608)
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="HealthBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
 z_index = 1
 offset_left = -2545.0
@@ -68,5 +74,16 @@ offset_right = -1457.0
 offset_bottom = -1351.0
 theme_override_styles/background = SubResource("StyleBoxFlat_6x1q3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_24nh7")
+value = 100.0
+show_percentage = false
+
+[node name="StaminaBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -2545.0
+offset_top = -1313.0
+offset_right = -1588.0
+offset_bottom = -1271.0
+theme_override_styles/background = SubResource("StyleBoxFlat_6x1q3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_oot1q")
 value = 100.0
 show_percentage = false
