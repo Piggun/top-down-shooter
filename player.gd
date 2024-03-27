@@ -37,7 +37,6 @@ func _physics_process(delta):
 		health -= 5.0 * overlapping_mobs.size() * delta
 		if health <= 0:
 			health_depleted.emit()
-			print("DEAD")
 
 #func spawn_weapon():
 	#new_gun = GUN.instantiate()

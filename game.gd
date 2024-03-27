@@ -10,3 +10,14 @@ func spawn_mob():
 
 func _on_timer_timeout():
 	spawn_mob()
+
+
+func _on_player_health_depleted():
+	%GameOverScreen.show()
+	get_tree().paused = true
+
+
+func _on_button_pressed():
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+	
