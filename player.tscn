@@ -62,10 +62,10 @@ debug_color = Color(0.807843, 0.372549, 0.470588, 0.419608)
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
 z_index = 1
-offset_left = -201.0
-offset_top = 35.0
-offset_right = 211.0
-offset_bottom = 62.0
+offset_left = -2545.0
+offset_top = -1395.0
+offset_right = -1457.0
+offset_bottom = -1351.0
 theme_override_styles/background = SubResource("StyleBoxFlat_6x1q3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_24nh7")
 value = 100.0
