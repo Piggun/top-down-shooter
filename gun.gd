@@ -1,6 +1,8 @@
 extends Area2D
 
 @onready var anim = %Pistol
+@onready var shooting_sound = %PistolSound
+
 #func _input(event):
 	#if event is InputEventMouseButton:
 		#print("mouse click at: ", event.position)
@@ -13,7 +15,11 @@ var deadzone := 0.05
 var can_fire = true
 var fire_rate = 0.3
 
+
 func _ready():
+	remove_child(shooting_sound)
+	get_parent().add_child(shooting_sound)
+	
 	# Controller deadzone
 	InputMap.action_set_deadzone("aim_up", deadzone)
 	InputMap.action_set_deadzone("aim_down", deadzone)
@@ -49,6 +55,7 @@ func _physics_process(delta):
 		
 
 func shoot():
+	shooting_sound.play()
 	const BULLET = preload("res://bullet.tscn")
 	var new_bullet = BULLET.instantiate()
 	new_bullet.global_position = %ShootingPoint.global_position

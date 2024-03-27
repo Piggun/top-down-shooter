@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cg7h4xilee0ok"]
+[gd_scene load_steps=8 format=3 uid="uid://cg7h4xilee0ok"]
 
 [ext_resource type="Script" path="res://gun.gd" id="1_112je"]
 [ext_resource type="Texture2D" uid="uid://elbn27hfg2mk" path="res://PNG/Pistol .png" id="1_l78e5"]
+[ext_resource type="AudioStream" uid="uid://cgb2bhkyqsnhe" path="res://9mm-pistol-shoot-short-reverb-7152.mp3" id="3_5cfgx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_url86"]
 radius = 517.279
@@ -50,3 +51,7 @@ animation = &"shoot"
 unique_name_in_owner = true
 position = Vector2(329.609, -190.663)
 scale = Vector2(5.45454, 5.45454)
+
+[node name="PistolSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_5cfgx")
