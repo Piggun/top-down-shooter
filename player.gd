@@ -35,7 +35,6 @@ func _physics_process(delta):
 	if overlapping_mobs.size() > 0:
 		%ProgressBar.value = health
 		health -= 5.0 * overlapping_mobs.size() * delta
-		print(health)
 		if health <= 0:
 			health_depleted.emit()
 			print("DEAD")

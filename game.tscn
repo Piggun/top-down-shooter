@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://o4iwa6stjvew"]
+[gd_scene load_steps=5 format=3 uid="uid://o4iwa6stjvew"]
 
+[ext_resource type="Script" path="res://game.gd" id="1_lektj"]
 [ext_resource type="PackedScene" uid="uid://crkyo1gjc3pq3" path="res://player.tscn" id="1_ruscd"]
 [ext_resource type="PackedScene" uid="uid://dykcymon3yvde" path="res://tree.tscn" id="2_3va4m"]
-[ext_resource type="PackedScene" uid="uid://d04er5omgws4l" path="res://ninja.tscn" id="3_rew4p"]
+
+[sub_resource type="Curve2D" id="Curve2D_axt1p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -244, -304, 0, 0, 0, 0, 2859, -302, 0, 0, 0, 0, 2854, 1759, 0, 0, 0, 0, -237, 1754, 0, 0, 0, 0, -244, -304)
+}
+point_count = 5
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_lektj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -23,6 +30,16 @@ position = Vector2(1250, 852)
 scale = Vector2(0.479998, 0.479998)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+
+[node name="Path2D" type="Path2D" parent="player"]
+position = Vector2(-2604.18, -1775.01)
+scale = Vector2(2.08334, 2.08334)
+curve = SubResource("Curve2D_axt1p")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-244, -304)
+rotation = 0.000644537
 
 [node name="Tree" parent="." instance=ExtResource("2_3va4m")]
 position = Vector2(311, 490)
@@ -45,17 +62,8 @@ position = Vector2(388, 1382)
 [node name="Tree7" parent="." instance=ExtResource("2_3va4m")]
 position = Vector2(1077, 1841)
 
-[node name="Ninja" parent="." instance=ExtResource("3_rew4p")]
-position = Vector2(613, 341)
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
 
-[node name="Ninja2" parent="." instance=ExtResource("3_rew4p")]
-position = Vector2(708, 1334)
-
-[node name="Ninja3" parent="." instance=ExtResource("3_rew4p")]
-position = Vector2(2369, 280)
-
-[node name="Ninja4" parent="." instance=ExtResource("3_rew4p")]
-position = Vector2(1306, 294)
-
-[node name="Ninja5" parent="." instance=ExtResource("3_rew4p")]
-position = Vector2(1857, 1376)
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]
