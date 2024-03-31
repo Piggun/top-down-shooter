@@ -14,14 +14,15 @@ func _physics_process(delta):
 	move_and_slide()
 
 func take_damage():
+	%HitSound.play()
 	health -= 1
 	if health == 0:
 		queue_free()
-		const ninja_dead = preload("res://ninja-dead.tscn")
+		const ninja_dead = preload("res://Scenes/ninja-dead.tscn")
 		var new_ninja_dead = ninja_dead.instantiate()
 		get_parent().add_child(new_ninja_dead)
+		new_ninja_dead.get_child(0).play_dead_sound()
 		new_ninja_dead.global_position = global_position
 	anim.play("hurt")
 	await get_tree().create_timer(0.2).timeout
 	anim.play("walk")
-

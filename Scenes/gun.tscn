@@ -1,18 +1,18 @@
 [gd_scene load_steps=8 format=3 uid="uid://cg7h4xilee0ok"]
 
-[ext_resource type="Script" path="res://gun.gd" id="1_112je"]
-[ext_resource type="Texture2D" uid="uid://elbn27hfg2mk" path="res://PNG/Pistol .png" id="1_l78e5"]
-[ext_resource type="AudioStream" uid="uid://cgb2bhkyqsnhe" path="res://9mm-pistol-shoot-short-reverb-7152.mp3" id="3_5cfgx"]
+[ext_resource type="Script" path="res://Scripts/gun.gd" id="1_fhaes"]
+[ext_resource type="Texture2D" uid="uid://elbn27hfg2mk" path="res://PNG/Pistol .png" id="2_fn72x"]
+[ext_resource type="AudioStream" uid="uid://cgb2bhkyqsnhe" path="res://Audio/9mm-pistol-shot.mp3" id="3_nmgaa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_url86"]
 radius = 517.279
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f03mg"]
-atlas = ExtResource("1_l78e5")
+atlas = ExtResource("2_fn72x")
 region = Rect2(660, 0, 660, 480)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_himow"]
-atlas = ExtResource("1_l78e5")
+atlas = ExtResource("2_fn72x")
 region = Rect2(0, 0, 660, 480)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_olrd8"]
@@ -31,7 +31,7 @@ animations = [{
 
 [node name="Gun" type="Area2D"]
 rotation = 0.0115384
-script = ExtResource("1_112je")
+script = ExtResource("1_fhaes")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_url86")
@@ -54,4 +54,4 @@ scale = Vector2(5.45454, 5.45454)
 
 [node name="PistolSound" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("3_5cfgx")
+stream = ExtResource("3_nmgaa")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://crkyo1gjc3pq3"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_kuta2"]
-[ext_resource type="PackedScene" uid="uid://bw55uu385suvu" path="res://animated_sprite_2d.tscn" id="2_84vew"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_kuta2"]
+[ext_resource type="PackedScene" uid="uid://bw55uu385suvu" path="res://Scenes/animated_sprite_2d.tscn" id="2_84vew"]
 [ext_resource type="Texture2D" uid="uid://d13ykf3uelo33" path="res://PNG/Ground shadow.png" id="2_geouu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mf6s"]

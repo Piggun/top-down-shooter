@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c8a6dsohctav7" path="res://PNG/Tree.png" id="1_8lmm1"]
 [ext_resource type="Texture2D" uid="uid://d13ykf3uelo33" path="res://PNG/Ground shadow.png" id="1_b5tns"]
-[ext_resource type="Script" path="res://tree.gd" id="1_e0eeb"]
+[ext_resource type="Script" path="res://Scripts/tree.gd" id="1_e0eeb"]
 [ext_resource type="Texture2D" uid="uid://boldaa2p3gfvl" path="res://PNG/Falling-leaves.png" id="4_dop2s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wy7kq"]

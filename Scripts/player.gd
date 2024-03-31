@@ -6,7 +6,7 @@ signal health_depleted
 var health = 100.0
 var stamina = 100.0
 var can_run = true
-const GUN = preload("res://gun.tscn")
+const GUN = preload("res://Scenes/gun.tscn")
 var weapon_spawned = false
 var new_gun = GUN.instantiate()
 

@@ -1,28 +1,29 @@
-[gd_scene load_steps=12 format=3 uid="uid://d04er5omgws4l"]
+[gd_scene load_steps=13 format=3 uid="uid://d04er5omgws4l"]
 
-[ext_resource type="Texture2D" uid="uid://bg0tqh6g50j8" path="res://PNG/Ninja-walk.png" id="1_mn0hf"]
-[ext_resource type="Script" path="res://ninja.gd" id="1_vrnf2"]
-[ext_resource type="Texture2D" uid="uid://d13ykf3uelo33" path="res://PNG/Ground shadow.png" id="2_g3wip"]
-[ext_resource type="Texture2D" uid="uid://2f55lk2y3gsy" path="res://PNG/Ninja-hurt.png" id="3_khpww"]
+[ext_resource type="Script" path="res://Scripts/ninja.gd" id="1_ac420"]
+[ext_resource type="Texture2D" uid="uid://d13ykf3uelo33" path="res://PNG/Ground shadow.png" id="2_eu5y1"]
+[ext_resource type="Texture2D" uid="uid://2f55lk2y3gsy" path="res://PNG/Ninja-hurt.png" id="3_qee44"]
+[ext_resource type="Texture2D" uid="uid://bg0tqh6g50j8" path="res://PNG/Ninja-walk.png" id="4_tbvra"]
+[ext_resource type="AudioStream" uid="uid://d2whi1jqc4c00" path="res://Audio/Enemy-hurt.mp3" id="5_x6tsm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nyyue"]
-atlas = ExtResource("3_khpww")
+atlas = ExtResource("3_qee44")
 region = Rect2(0, 0, 312, 516)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g6cx6"]
-atlas = ExtResource("1_mn0hf")
+atlas = ExtResource("4_tbvra")
 region = Rect2(0, 0, 312, 516)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oc3n3"]
-atlas = ExtResource("1_mn0hf")
+atlas = ExtResource("4_tbvra")
 region = Rect2(312, 0, 312, 516)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vpw2x"]
-atlas = ExtResource("1_mn0hf")
+atlas = ExtResource("4_tbvra")
 region = Rect2(0, 516, 312, 516)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uge18"]
-atlas = ExtResource("1_mn0hf")
+atlas = ExtResource("4_tbvra")
 region = Rect2(312, 516, 312, 516)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hqio7"]
@@ -60,13 +61,13 @@ size = Vector2(79, 230)
 collision_layer = 3
 collision_mask = 3
 platform_floor_layers = 4294901760
-script = ExtResource("1_vrnf2")
+script = ExtResource("1_ac420")
 
 [node name="GroundShadow" type="Sprite2D" parent="."]
 modulate = Color(0.262745, 0.356863, 0.184314, 1)
 position = Vector2(0, 4)
 scale = Vector2(0.151894, 0.157402)
-texture = ExtResource("2_g3wip")
+texture = ExtResource("2_eu5y1")
 
 [node name="Ninja" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
@@ -78,3 +79,8 @@ animation = &"walk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -119)
 shape = SubResource("RectangleShape2D_33mfh")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_x6tsm")
+volume_db = 10.0

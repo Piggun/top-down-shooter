@@ -56,7 +56,7 @@ func _physics_process(delta):
 
 func shoot():
 	shooting_sound.play()
-	const BULLET = preload("res://bullet.tscn")
+	const BULLET = preload("res://Scenes/bullet.tscn")
 	var new_bullet = BULLET.instantiate()
 	new_bullet.global_position = %ShootingPoint.global_position
 	new_bullet.global_rotation = %ShootingPoint.global_rotation

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://uutwhgalkbd6"]
+
+[ext_resource type="Texture2D" uid="uid://bnaaidi8trjb1" path="res://PNG/Ninja-dead.png" id="1_ypa14"]
+[ext_resource type="Script" path="res://Scripts/Ninja-dead.gd" id="2_nwqjf"]
+[ext_resource type="AudioStream" uid="uid://d2whi1jqc4c00" path="res://Audio/Enemy-hurt.mp3" id="3_15xbn"]
+[ext_resource type="AudioStream" uid="uid://dnf2dr6fproao" path="res://Audio/Enemy-dead.mp3" id="4_fsret"]
+
+[node name="Sprite2D" type="Sprite2D"]
+
+[node name="Ninja-dead" type="Sprite2D" parent="."]
+position = Vector2(3, 1)
+scale = Vector2(0.474, 0.474)
+texture = ExtResource("1_ypa14")
+script = ExtResource("2_nwqjf")
+
+[node name="bloodStart" type="Marker2D" parent="Ninja-dead"]
+unique_name_in_owner = true
+position = Vector2(-61.1814, 99.1561)
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="Ninja-dead"]
+unique_name_in_owner = true
+position = Vector2(-6.32911, -2.1097)
+scale = Vector2(2.1097, 2.1097)
+stream = ExtResource("3_15xbn")
+volume_db = 10.0
+
+[node name="DeadSound" type="AudioStreamPlayer2D" parent="Ninja-dead"]
+unique_name_in_owner = true
+position = Vector2(-6.32911, -2.1097)
+scale = Vector2(2.1097, 2.1097)
+stream = ExtResource("4_fsret")
