@@ -37,11 +37,12 @@ script = ExtResource("1_fhaes")
 shape = SubResource("CircleShape2D_url86")
 
 [node name="WeaponPivot" type="Marker2D" parent="."]
-rotation = 0.137987
+unique_name_in_owner = true
+rotation = 0.137293
 
 [node name="Pistol" type="AnimatedSprite2D" parent="WeaponPivot"]
 unique_name_in_owner = true
-position = Vector2(375.547, 5.2165)
+position = Vector2(288.894, 18.2093)
 rotation = -0.148954
 scale = Vector2(0.32356, 0.32356)
 sprite_frames = SubResource("SpriteFrames_olrd8")

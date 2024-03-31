@@ -14,6 +14,8 @@ extends Area2D
 var deadzone := 0.05
 var can_fire = true
 var fire_rate = 0.3
+var ammos = 7
+var reload_time = 1
 
 
 func _ready():
@@ -35,11 +37,18 @@ func _process(delta):
 
 	
 func _physics_process(delta):
-	if Input.is_action_pressed("shoot") and can_fire:
+	if Input.is_action_pressed("shoot") and can_fire and ammos > 0:
 		anim.play("shoot")
 		shoot()
 		can_fire = false
 		await get_tree().create_timer(fire_rate).timeout
+		can_fire = true
+		ammos -= 1
+		print(ammos)
+	if Input.is_action_pressed("reload"):
+		can_fire = false
+		await get_tree().create_timer(reload_time).timeout
+		ammos = 7
 		can_fire = true
 	
 	 ##Controller aim	
