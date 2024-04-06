@@ -56,3 +56,8 @@ scale = Vector2(5.45454, 5.45454)
 [node name="PistolSound" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("3_nmgaa")
+
+[node name="ReloadTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
