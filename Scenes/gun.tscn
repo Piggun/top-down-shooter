@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cg7h4xilee0ok"]
+[gd_scene load_steps=9 format=3 uid="uid://cg7h4xilee0ok"]
 
 [ext_resource type="Script" path="res://Scripts/gun.gd" id="1_fhaes"]
 [ext_resource type="Texture2D" uid="uid://elbn27hfg2mk" path="res://PNG/Pistol .png" id="2_fn72x"]
 [ext_resource type="AudioStream" uid="uid://cgb2bhkyqsnhe" path="res://Audio/9mm-pistol-shot.mp3" id="3_nmgaa"]
+[ext_resource type="AudioStream" uid="uid://cj75lq8nyv8wl" path="res://Audio/pistol-reload.mp3" id="4_57twj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_url86"]
 radius = 517.279
@@ -56,6 +57,10 @@ scale = Vector2(5.45454, 5.45454)
 [node name="PistolSound" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("3_nmgaa")
+
+[node name="PistolReloadSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_57twj")
 
 [node name="ReloadTimer" type="Timer" parent="."]
 unique_name_in_owner = true

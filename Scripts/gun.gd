@@ -73,6 +73,7 @@ func shoot():
 	get_parent().add_child(new_bullet)
 	
 func reload():
+	%PistolReloadSound.play()
 	print("reloading..")
 	is_reloading = true
 	can_fire = false
